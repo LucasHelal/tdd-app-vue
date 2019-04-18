@@ -12,6 +12,24 @@ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 ```
 sudo apt-get install -y nodejs
 ```
+
+- npm sem sudo
+
+```
+mkdir ~/.npm-global
+```
+ADD no bashrc ou zshrc: 
+
+export NPM_CONFIG_PREFIX=~/.npm-global
+export PATH=~/.npm-global/bin:$PATH 
+
+
+- Aumentar Watchers
+
+```
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+```
 - Yarn
   
 ```
