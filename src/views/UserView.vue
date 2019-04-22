@@ -1,6 +1,6 @@
 <template>
   <div>
-    <VUserSearchForm 
+    <VUserSearchForm
       @submitted="searchUser"
     />
     <VUserProfile :user="user" />
@@ -9,19 +9,19 @@
 
 <script>
 import { mapState } from 'vuex';
-import VUserSearchForm from '@/components/VUserSearchForm'
-import VUserProfile from '@/components/VUserProfile'
+import VUserSearchForm from '@/components/VUserSearchForm';
+import VUserProfile from '@/components/VUserProfile';
 
 export default {
   name: 'UserView',
-   components: {
+  components: {
     VUserSearchForm,
     VUserProfile,
   },
   methods: {
     searchUser(username) {
       this.$store.dispatch('SEARCH_USER', { username });
-    }
+    },
   },
   computed: {
     ...mapState({
